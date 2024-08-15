@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Adroit.Services.TinyUrl.Repository\Adroit.Services.TinyUrl.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

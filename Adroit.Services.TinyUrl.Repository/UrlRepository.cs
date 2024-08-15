@@ -4,6 +4,8 @@ namespace Adroit.Services.TinyUrl.Repository
 {
     public class UrlRepository : IUrlRepository
     {
+        public UrlRepository() { 
+        }
         public void Create(string longUrl, string customShortUrl)
         {
             throw new NotImplementedException();
