@@ -1,6 +1,7 @@
 ﻿using Adroit.Services.TinyUrl.Statistics.Store.Interfaces;
 using Adroit.Services.TinyUrl.Statistics.Store.Model;
 using log4net;
+using log4net.Core;
 
 namespace Adroit.Services.TinyUrl.Statistics.Store
 {

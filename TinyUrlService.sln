@@ -21,6 +21,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Sta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroid.Serivces.Common", "Adroid.Serivces.Common\Adroid.Serivces.Common.csproj", "{56536019-F816-430B-BC54-BFE021CBD44D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{65551EB7-57BD-4891-AA8E-E3B5ED6D08BA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Validation", "Adroit.Services.TinyUrl.Validation\Adroit.Services.TinyUrl.Validation.csproj", "{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +70,10 @@ Global
 		{56536019-F816-430B-BC54-BFE021CBD44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56536019-F816-430B-BC54-BFE021CBD44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56536019-F816-430B-BC54-BFE021CBD44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

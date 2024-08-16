@@ -13,11 +13,4 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Adroit.Services.TinyUrl.Repository\Adroit.Services.TinyUrl.Repository.csproj" />
-    <ProjectReference Include="..\Adroit.Services.TinyUrl.Statistics\Adroit.Services.TinyUrl.Statistics.csproj" />
-    <ProjectReference Include="..\Adroit.Services.TinyUrl.UrlGenerator\Adroit.Services.TinyUrl.UrlGenerator.csproj" />
-    <ProjectReference Include="..\Adroit.Services.TinyUrl.Validation\Adroit.Services.TinyUrl.Validation.csproj" />
-  </ItemGroup>
-
 </Project>

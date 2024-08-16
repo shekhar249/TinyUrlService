@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Adroit.Services.TinyUrl.Console
 {
-    internal class TinyUrlServiceOptions
+    public enum TinyUrlServiceOptions
     {
-       public enum TinyUrlServiceOptionsEnum
-        {
-            CREATE = 1,
-            GET_URL = 2,
-            DELETE_URL = 3,
-            GET_CLICK_COUNT = 4,
-            EXIT = 5
-        }
+        CREATE = 1,
+        GET_URL = 2,
+        DELETE_URL = 3,
+        GET_CLICK_COUNT = 4,
+        EXIT = 5
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adroit.Services.TinyUrl.Statistics.Store.Interfaces
 {
-    internal interface IStatisticsStore
+    public interface IStatisticsStore
     {
         int GetUrlClickCount(string shortUrl);
         void IncrementUrlClickCount(string shortUrl);

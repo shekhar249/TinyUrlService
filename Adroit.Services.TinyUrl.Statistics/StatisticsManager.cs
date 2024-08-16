@@ -1,22 +1,24 @@
 ﻿using Adroit.Services.TinyUrl.Statistics.Interfaces;
+using Adroit.Services.TinyUrl.Statistics.Store;
+using Adroit.Services.TinyUrl.Statistics.Store.Interfaces;
 
 namespace Adroit.Services.TinyUrl.Statistics
 {
     public class StatisticsManager : IStatisticsManager
     {
-       
-        public StatisticsManager()
+       private readonly IStatisticsStore statisticsStore;
+        public StatisticsManager(IStatisticsStore statisticsStore)
         {
-            
+            this.statisticsStore = statisticsStore;
         }
         public int GetUrlClickCount(string shortUrl)
         {
-            throw new NotImplementedException();
+            return this.statisticsStore.GetUrlClickCount(shortUrl);
         }
 
         public void IncrementUrlClickCount(string shortUrl)
         {
-            throw new NotImplementedException();
+            this.statisticsStore.IncrementUrlClickCount(shortUrl);
         }
     }
 }
