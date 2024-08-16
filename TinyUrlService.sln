@@ -3,30 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Console", "TinyUrlService\Adroit.Services.TinyUrl.Console.csproj", "{E23FC2E9-C6F7-4AA3-A353-E70D6657934F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Repository", "Adroit.Services.TinyUrl.Repository\Adroit.Services.TinyUrl.Repository.csproj", "{0FEC280B-E95E-4712-9DA1-D4C35388E452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Repository", "Adroit.Services.TinyUrl.Repository\Adroit.Services.TinyUrl.Repository.csproj", "{0FEC280B-E95E-4712-9DA1-D4C35388E452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.UrlGenerator", "Adroit.Services.TinyUrl.UrlGenerator\Adroit.Services.TinyUrl.UrlGenerator.csproj", "{4631E7BC-0AE2-484A-AEC4-D48DD21AB593}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.UrlGenerator", "Adroit.Services.TinyUrl.UrlGenerator\Adroit.Services.TinyUrl.UrlGenerator.csproj", "{4631E7BC-0AE2-484A-AEC4-D48DD21AB593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Statistics", "Adroit.Services.TinyUrl.Statistics\Adroit.Services.TinyUrl.Statistics.csproj", "{CA1FC2FE-F99C-446A-816B-8491539FA3E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Statistics", "Adroit.Services.TinyUrl.Statistics\Adroit.Services.TinyUrl.Statistics.csproj", "{CA1FC2FE-F99C-446A-816B-8491539FA3E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Statistics.Store", "Adroit.Services.TinyUrl.Statistics.Store\Adroit.Services.TinyUrl.Statistics.Store.csproj", "{B55D1079-30D5-482E-8679-265CDB4D3669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Statistics.Store", "Adroit.Services.TinyUrl.Statistics.Store\Adroit.Services.TinyUrl.Statistics.Store.csproj", "{B55D1079-30D5-482E-8679-265CDB4D3669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl", "Adroit.Services.TinyUrl\Adroit.Services.TinyUrl.csproj", "{5504E074-CBEC-46B8-805C-4A793FB5AA5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl", "Adroit.Services.TinyUrl\Adroit.Services.TinyUrl.csproj", "{5504E074-CBEC-46B8-805C-4A793FB5AA5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Tests", "Adroit.Services.TinyUrl.Tests\Adroit.Services.TinyUrl.Tests.csproj", "{C0A5BCF5-A60E-4B14-8C22-297430176747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Tests", "Adroit.Services.TinyUrl.Tests\Adroit.Services.TinyUrl.Tests.csproj", "{C0A5BCF5-A60E-4B14-8C22-297430176747}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Statistics.Tests", "Adroit.Services.TinyUrl.Statistics.Tests\Adroit.Services.TinyUrl.Statistics.Tests.csproj", "{EE25AC24-6F12-47C5-A125-ED518DE4937C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Statistics.Tests", "Adroit.Services.TinyUrl.Statistics.Tests\Adroit.Services.TinyUrl.Statistics.Tests.csproj", "{EE25AC24-6F12-47C5-A125-ED518DE4937C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroid.Serivces.Common", "Adroid.Serivces.Common\Adroid.Serivces.Common.csproj", "{56536019-F816-430B-BC54-BFE021CBD44D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroid.Serivces.Common", "Adroid.Serivces.Common\Adroid.Serivces.Common.csproj", "{56536019-F816-430B-BC54-BFE021CBD44D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{65551EB7-57BD-4891-AA8E-E3B5ED6D08BA}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Validation", "Adroit.Services.TinyUrl.Validation\Adroit.Services.TinyUrl.Validation.csproj", "{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Validation", "Adroit.Services.TinyUrl.Validation\Adroit.Services.TinyUrl.Validation.csproj", "{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adroit.Services.TinyUrl.Console", "Adroit.Services.TinyUrl.Console\Adroit.Services.TinyUrl.Console.csproj", "{482B1509-A041-48DE-B503-1345852E1067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E23FC2E9-C6F7-4AA3-A353-E70D6657934F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E23FC2E9-C6F7-4AA3-A353-E70D6657934F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E23FC2E9-C6F7-4AA3-A353-E70D6657934F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E23FC2E9-C6F7-4AA3-A353-E70D6657934F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FEC280B-E95E-4712-9DA1-D4C35388E452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FEC280B-E95E-4712-9DA1-D4C35388E452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FEC280B-E95E-4712-9DA1-D4C35388E452}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,6 +70,10 @@ Global
 		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2CEFDD7-F740-4858-826B-A1F369CD2C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482B1509-A041-48DE-B503-1345852E1067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482B1509-A041-48DE-B503-1345852E1067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482B1509-A041-48DE-B503-1345852E1067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482B1509-A041-48DE-B503-1345852E1067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

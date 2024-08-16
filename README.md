@@ -1,5 +1,8 @@
 ﻿# Tiny Url Service
 Application to serve as a proof of concept for a mock TinyURL style service
+## Requirements
+	- .NET Framework 8.0
+	- Visual Studio 2022
 ## Steps to run the console application
 ### Clone the solution from repo.
 ```bash
