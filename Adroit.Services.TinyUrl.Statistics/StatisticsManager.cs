@@ -20,5 +20,10 @@ namespace Adroit.Services.TinyUrl.Statistics
         {
             this.statisticsStore.IncrementUrlClickCount(shortUrl);
         }
+
+        void IStatisticsManager.AddUrlForStats(string shortUrl)
+        {
+            this.statisticsStore.AddUrlForStats(shortUrl);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Adroit.Services.TinyUrl
     {
         private readonly IUrlRepository urlRepository;
         private readonly ITinyUrlGenerator tinyUrlGenerator;
-        private readonly int shortUrlLength;
+        public int ShortUrlLength { get; private set; }
         private readonly IStatisticsManager statisticsManager;
         private readonly ShortUrlValidator shortUrlValidator;
         private readonly LongUrlValidator longUrlValidator;
@@ -33,7 +33,7 @@ namespace Adroit.Services.TinyUrl
 
             IConfigurationRoot configuration = builder.Build();
             var objUrlLenght = configuration.GetValue(typeof(int), "AppSettings:ShortUrlLength");
-            this.shortUrlLength = objUrlLenght == null ? 7 : (int)objUrlLenght;
+            this.ShortUrlLength = objUrlLenght == null ? 7 : (int)objUrlLenght;
             this.statisticsManager = statisticsManager;
             this.shortUrlValidator = shortUrlValidator;
             this.longUrlValidator = longUrlValidator;
@@ -41,7 +41,7 @@ namespace Adroit.Services.TinyUrl
 
         public string CreateShortUrl(string longUrl, string? customShortUrl = null)
         {
-            string shortUrl = customShortUrl ?? this.tinyUrlGenerator.GenerateRandomShortUrl(this.shortUrlLength);
+            string shortUrl = customShortUrl ?? this.tinyUrlGenerator.GenerateRandomShortUrl(this.ShortUrlLength);
 
             if (this.urlRepository.Contains(shortUrl))
             {
@@ -68,8 +68,8 @@ namespace Adroit.Services.TinyUrl
                     throw new ArgumentException($"Long url is not in required format. Error : {errorMessage}");
                 }
             }
-
             this.urlRepository.Create(longUrl, shortUrl);
+            this.statisticsManager.AddUrlForStats(shortUrl);
             return shortUrl;
         }
 

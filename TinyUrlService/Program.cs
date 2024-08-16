@@ -12,6 +12,10 @@ namespace Adroit.Services.TinyUrl.Console
     internal class Program
     {
         private static ILog logger = LogManager.GetLogger(typeof(Program));
+        /// <summary>
+        /// TODO - All explicitly created instances can be registered to container and  TinyUrl service can be resolved from container.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             LogHelper.SetUpLoggingEnvironment(nameof(TinyUrlService));
@@ -21,8 +25,8 @@ namespace Adroit.Services.TinyUrl.Console
             var statisticsManager = new StatisticsManager(statisticsStore);
             var shortUrlValidator = new ShortUrlValidator();
             var longUrlValidator = new LongUrlValidator();
-            var tinyUrlService = new TinyUrlService(urlRepository, urlGenerator, statisticsManager,shortUrlValidator,longUrlValidator);
-            
+            var tinyUrlService = new TinyUrlService(urlRepository, urlGenerator, statisticsManager, shortUrlValidator, longUrlValidator);
+
             while (true)
             {
                 System.Console.WriteLine("\nTinyUrl Service:");
@@ -31,11 +35,18 @@ namespace Adroit.Services.TinyUrl.Console
                 System.Console.WriteLine("3. Delete Short URL");
                 System.Console.WriteLine("4. Get URL Click Count");
                 System.Console.WriteLine("5. Exit");
-                System.Console.Write("Choose an option: ");                
+                System.Console.Write("Choose an option: ");
                 string? optionString = System.Console.ReadLine();
-                int optionInt = 0;
-                int.TryParse(optionString,out optionInt);
-                TinyUrlServiceOptions option = (TinyUrlServiceOptions) Enum.Parse(typeof(TinyUrlServiceOptions),optionString);
+                optionString = string.IsNullOrEmpty(optionString) ? "0" : optionString;
+                TinyUrlServiceOptions option = TinyUrlServiceOptions.CONTNUE;
+                try
+                {
+                    option = (TinyUrlServiceOptions)Enum.Parse(typeof(TinyUrlServiceOptions), optionString);
+                }
+                catch (Exception)
+                {
+                    option = TinyUrlServiceOptions.CONTNUE;
+                }
                 switch (option)
                 {
                     case TinyUrlServiceOptions.CREATE:
@@ -45,7 +56,7 @@ namespace Adroit.Services.TinyUrl.Console
                         string customShortUrl = System.Console.ReadLine();
                         try
                         {
-                            string shortUrl = tinyUrlService.CreateShortUrl(longUrl, string.IsNullOrWhiteSpace(customShortUrl) ? null : customShortUrl);
+                            string shortUrl = tinyUrlService.CreateShortUrl(longUrl, string.IsNullOrWhiteSpace(customShortUrl) ? urlGenerator.GenerateRandomShortUrl(tinyUrlService.ShortUrlLength) : customShortUrl);
                             System.Console.WriteLine($"Short URL created: {shortUrl}");
                         }
                         catch (Exception ex)
@@ -69,13 +80,20 @@ namespace Adroit.Services.TinyUrl.Console
                     case TinyUrlServiceOptions.DELETE_URL:
                         System.Console.Write("Enter the short URL to delete: ");
                         string deleteShortUrl = System.Console.ReadLine();
-                        if (tinyUrlService.DeleteShortUrl(deleteShortUrl))
+                        try
                         {
-                            System.Console.WriteLine("Short URL deleted successfully.");
+                            if (tinyUrlService.DeleteShortUrl(deleteShortUrl))
+                            {
+                                System.Console.WriteLine("Short URL deleted successfully.");
+                            }
+                            else
+                            {
+                                System.Console.WriteLine("Short URL not found.");
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            System.Console.WriteLine("Short URL not found.");
+                            System.Console.WriteLine($"Error: {ex.Message}");
                         }
 
                         break;
@@ -94,10 +112,12 @@ namespace Adroit.Services.TinyUrl.Console
                         break;
                     case TinyUrlServiceOptions.EXIT:
                         return;
+                    case TinyUrlServiceOptions.CONTNUE:
+                        break;
                     default:
                         System.Console.WriteLine("Invalid option. Please try again.");
                         break;
-                }               
+                }
             }
         }
     }

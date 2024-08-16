@@ -38,5 +38,10 @@ namespace Adroit.Services.TinyUrl.Statistics.Store
                 this.logger.Warn($"Short Url: {shortUrl} not found while increment click count.");
             }
         }
+
+        void IStatisticsStore.AddUrlForStats(string shortUrl)
+        {
+            this.urlStatsCache[shortUrl] = new UrlStats();
+        }      
     }
 }

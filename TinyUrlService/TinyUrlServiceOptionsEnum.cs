@@ -12,6 +12,7 @@ namespace Adroit.Services.TinyUrl.Console
         GET_URL = 2,
         DELETE_URL = 3,
         GET_CLICK_COUNT = 4,
-        EXIT = 5
+        EXIT = 5,
+        CONTNUE = 6
     }
 }
