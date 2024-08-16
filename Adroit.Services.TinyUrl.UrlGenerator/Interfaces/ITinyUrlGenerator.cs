@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adroit.Services.TinyUrl.UrlGenerator.Interfaces
 {
-    internal interface ITinyUrlGenerator
+    public interface ITinyUrlGenerator
     {
         string GenerateRandomShortUrl(int length);
     }

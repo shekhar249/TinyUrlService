@@ -8,9 +8,13 @@ namespace Adroit.Services.TinyUrl.Console
 {
     internal class TinyUrlServiceOptions
     {
-        enum TinyUrlServiceOptionsEnum
+       public enum TinyUrlServiceOptionsEnum
         {
-            
+            CREATE = 1,
+            GET_URL = 2,
+            DELETE_URL = 3,
+            GET_CLICK_COUNT = 4,
+            EXIT = 5
         }
     }
 }

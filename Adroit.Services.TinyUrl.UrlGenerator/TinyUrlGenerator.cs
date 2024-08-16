@@ -1,5 +1,6 @@
 ﻿using Adroit.Services.TinyUrl.Repository.Interfaces;
 using Adroit.Services.TinyUrl.UrlGenerator.Interfaces;
+using Microsoft.Extensions.Configuration;
 using System;
 
 namespace Adroit.Services.TinyUrl.UrlGenerator
@@ -9,7 +10,7 @@ namespace Adroit.Services.TinyUrl.UrlGenerator
         private readonly Random random;
         public TinyUrlGenerator()
         {
-            this.random = new Random();
+            this.random = new Random();          
         }
         public string GenerateRandomShortUrl(int length)
         {

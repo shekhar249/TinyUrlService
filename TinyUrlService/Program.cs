@@ -1,6 +1,8 @@
 ﻿using Adroit.Services.TinyUrl.Repository;
-using System;
-
+using static Adroit.Services.TinyUrl.Console.TinyUrlServiceOptions;
+using Adroit.Services.TinyUrl.UrlGenerator;
+using Adroid.Serivces.Common;
+using Adroit.Services.TinyUrl.Statistics;
 namespace Adroit.Services.TinyUrl.Console
 {
     internal class Program
@@ -8,8 +10,10 @@ namespace Adroit.Services.TinyUrl.Console
         static void Main(string[] args)
         {
             var urlRepository = new UrlRepository();
-            var tinyUrlService = new TinyUrlService(urlRepository);
-
+            var urlGenerator = new TinyUrlGenerator();
+            var statisticsManager = new StatisticsManager();
+            var tinyUrlService = new TinyUrlService(urlRepository, urlGenerator, statisticsManager);
+            LogHelper.SetUpLoggingEnvironment(nameof(TinyUrlService));
             while (true)
             {
                 System.Console.WriteLine("\nTinyUrl Service:");
@@ -18,14 +22,14 @@ namespace Adroit.Services.TinyUrl.Console
                 System.Console.WriteLine("3. Delete Short URL");
                 System.Console.WriteLine("4. Get URL Click Count");
                 System.Console.WriteLine("5. Exit");
-                System.Console.Write("Choose an option: ");
-                int option = 0;
+                System.Console.Write("Choose an option: ");                
                 string? optionString = System.Console.ReadLine();
-                int.TryParse(optionString,out option);
-
+                int optionInt = 0;
+                int.TryParse(optionString,out optionInt);
+                TinyUrlServiceOptionsEnum option = (TinyUrlServiceOptionsEnum) Enum.Parse(typeof(TinyUrlServiceOptionsEnum),optionString);
                 switch (option)
                 {
-                    case 1:
+                    case TinyUrlServiceOptionsEnum.CREATE:
                         System.Console.Write("Enter the long URL: ");
                         string longUrl = System.Console.ReadLine();
                         System.Console.Write("Enter a custom short URL (or press enter for random): ");
@@ -40,7 +44,7 @@ namespace Adroit.Services.TinyUrl.Console
                             System.Console.WriteLine($"Error: {ex.Message}");
                         }
                         break;
-                    case 2:
+                    case TinyUrlServiceOptionsEnum.GET_URL:
                         System.Console.Write("Enter the short URL: ");
                         string getShortUrl = System.Console.ReadLine();
                         try
@@ -53,7 +57,7 @@ namespace Adroit.Services.TinyUrl.Console
                             System.Console.WriteLine($"Error: {ex.Message}");
                         }
                         break;
-                    case 3:
+                    case TinyUrlServiceOptionsEnum.DELETE_URL:
                         System.Console.Write("Enter the short URL to delete: ");
                         string deleteShortUrl = System.Console.ReadLine();
                         if (tinyUrlService.DeleteShortUrl(deleteShortUrl))
@@ -64,10 +68,11 @@ namespace Adroit.Services.TinyUrl.Console
                         {
                             System.Console.WriteLine("Short URL not found.");
                         }
+
                         break;
-                    case "4":
+                    case TinyUrlServiceOptionsEnum.GET_CLICK_COUNT:
                         System.Console.Write("Enter the short URL: ");
-                        string clickShortUrl = Console.ReadLine();
+                        string clickShortUrl = System.Console.ReadLine();
                         try
                         {
                             int clickCount = tinyUrlService.GetUrlClickCount(clickShortUrl);
@@ -78,12 +83,12 @@ namespace Adroit.Services.TinyUrl.Console
                             System.Console.WriteLine($"Error: {ex.Message}");
                         }
                         break;
-                    case "5":
+                    case TinyUrlServiceOptionsEnum.EXIT:
                         return;
                     default:
                         System.Console.WriteLine("Invalid option. Please try again.");
                         break;
-                }
+                }               
             }
         }
     }

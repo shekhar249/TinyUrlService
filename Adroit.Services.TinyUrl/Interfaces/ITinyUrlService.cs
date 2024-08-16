@@ -11,5 +11,6 @@ namespace Adroit.Services.TinyUrl.Interfaces
         string CreateShortUrl(string longUrl, string? customShortUrl = null);
         string GetLongUrl(string shortUrl);
         bool DeleteShortUrl(string shortUrl);
+        int GetUrlClickCount(string shortUrl);
     }
 }

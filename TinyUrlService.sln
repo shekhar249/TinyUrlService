@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroit.Services.TinyUrl.Statistics.Tests", "Adroit.Services.TinyUrl.Statistics.Tests\Adroit.Services.TinyUrl.Statistics.Tests.csproj", "{EE25AC24-6F12-47C5-A125-ED518DE4937C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adroid.Serivces.Common", "Adroid.Serivces.Common\Adroid.Serivces.Common.csproj", "{56536019-F816-430B-BC54-BFE021CBD44D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{EE25AC24-6F12-47C5-A125-ED518DE4937C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE25AC24-6F12-47C5-A125-ED518DE4937C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE25AC24-6F12-47C5-A125-ED518DE4937C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56536019-F816-430B-BC54-BFE021CBD44D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56536019-F816-430B-BC54-BFE021CBD44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56536019-F816-430B-BC54-BFE021CBD44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56536019-F816-430B-BC54-BFE021CBD44D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

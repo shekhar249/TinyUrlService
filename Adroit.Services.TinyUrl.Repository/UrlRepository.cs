@@ -4,11 +4,13 @@ namespace Adroit.Services.TinyUrl.Repository
 {
     public class UrlRepository : IUrlRepository
     {
-        public UrlRepository() { 
+        private readonly Dictionary<string, string> urlCache;
+        public UrlRepository() {
+            urlCache = new Dictionary<string, string>();
         }
         public void Create(string longUrl, string customShortUrl)
         {
-            throw new NotImplementedException();
+            urlCache[customShortUrl] = longUrl;
         }
 
         public bool Delete(string shortUrl)
@@ -23,7 +25,7 @@ namespace Adroit.Services.TinyUrl.Repository
 
         bool IUrlRepository.Contains(string shortUrl)
         {
-            throw new NotImplementedException();
+            return this.urlCache.ContainsKey(shortUrl);
         }
     }
 }
