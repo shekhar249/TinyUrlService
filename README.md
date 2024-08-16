@@ -13,8 +13,8 @@ git clone https://github.com/shekhar249/TinyUrlService.git
 ### Set console application Adroit.Services.TinyUrl.Console as default project
 	Set as startup projct - visual command
 ### How to run the application
-	- Press F5 to run the application with command line options 
-	- Run tests from project Adroit.Services.TinyUrl.Tests to review app functionality with unit tests
+	- From Visual Studio - Press F5 to run the application with command line options 
+	- Using Unit Tests - Run tests from project Adroit.Services.TinyUrl.Tests to review app functionality with unit tests
  
 # Assumptions
   - There are 200 million new URL shortening requests per month.
