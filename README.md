@@ -29,6 +29,9 @@ git clone https://github.com/shekhar249/TinyUrlService.git
  - Validation rules for long URL's and manual short URL's
  - Precompute  and cache the keys in advance for better performance when request volume is high and possibility of key collision is high.
  - Purge old Urls and releave the keys for reuse
+ - Authentication
+ - Authorization
+ - Observability
  
 
  
